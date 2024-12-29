@@ -19,6 +19,10 @@ public class Number_guess
         {
             System.out.print("Enter the number to guess:");
             guess_num=sc.nextInt();
+            if(chances == 7)
+            {
+                System.out.println("Hint : The number is between "+(num-10)+" and "+(num+10));
+            }
             if(guess_num == num) 
             {
                 long end_time=System.currentTimeMillis();
@@ -69,6 +73,10 @@ public class Number_guess
         {
             System.out.print("Enter the number to guess:");
             guess_num=sc.nextInt();
+            if(chances == 3)
+            {
+                System.out.println("Hint : The number is between "+(num-5)+" and "+(num+5));
+            }
             if(guess_num == num) 
             {
                 long end_time=System.currentTimeMillis();
@@ -119,6 +127,10 @@ public class Number_guess
         {
             System.out.print("Enter the number to guess:");
             guess_num=sc.nextInt();
+            if(chances == 2)
+            {
+                System.out.println("Hint : The number is between "+(num-1)+" and "+(num+1));
+            }
             if(guess_num == num) 
             {
                 long end_time=System.currentTimeMillis();

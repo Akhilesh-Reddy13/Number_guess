@@ -55,11 +55,95 @@ public class Number_guess
     }
     public  void medium()
     {
-       
+        Random ran=new Random();
+        System.out.println("You are given 5 chances to guess a number between(1-100)");
+        int num=ran.nextInt(100);
+        int guess_num=0;
+        int i=0 , chances=0 ;
+        while(chances<5)
+        {
+            System.out.print("Enter the number to guess:");
+            guess_num=sc.nextInt();
+            if(guess_num == num) 
+            {
+                System.out.print("You've guessed it right in "+(i+1)+" guesses.");
+                break;
+            }
+            else if (guess_num>num)
+            {
+                System.out.print("Wrong, the number is less than "+guess_num+"\n");
+                System.out.println("Chances left= "+(5-(chances+1)));
+                i++;
+                chances++;
+            }
+            else if (guess_num<num)
+            {
+                System.out.print("Wrong, the number is greater than "+guess_num+"\n");
+                System.out.println("Chances left= "+(5-(chances+1)));
+                i++;
+                chances++;
+            }
+        }
+        if(chances>=5)
+        {
+            System.out.println("Sorry , You ran out of chances");
+        }
+        System.out.print("Do you play again(Y/N): ");
+        String opt=sc.next();
+        if(opt.equals("Y"))
+        {
+            medium();
+        }
+        else
+        {
+            return;
+        }
     }
     public void hard()
     {
-        return;
+        Random ran=new Random();
+        System.out.println("You are given 3 chances to guess a number between(1-100)");
+        int num=ran.nextInt(100);
+        int guess_num=0;
+        int i=0 , chances=0 ;
+        while(chances<3)
+        {
+            System.out.print("Enter the number to guess:");
+            guess_num=sc.nextInt();
+            if(guess_num == num) 
+            {
+                System.out.print("You've guessed it right in "+(i+1)+" guesses.");
+                break;
+            }
+            else if (guess_num>num)
+            {
+                System.out.print("Wrong, the number is less than "+guess_num+"\n");
+                System.out.println("Chances left= "+(3-(chances+1)));
+                i++;
+                chances++;
+            }
+            else if (guess_num<num)
+            {
+                System.out.print("Wrong, the number is greater than "+guess_num+"\n");
+                System.out.println("Chances left= "+(3-(chances+1)));
+                i++;
+                chances++;
+            }
+        }
+        if(chances>=3)
+        {
+            System.out.println("Sorry , You ran out of chances");
+        }
+        System.out.print("Do you play again(Y/N): ");
+        String opt=sc.next();
+        if(opt.equals("Y"))
+        {
+            hard();
+        }
+        else
+        {
+            return;
+        }
     }
     public void closeSc()
     {
